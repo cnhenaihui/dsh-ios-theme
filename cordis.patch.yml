@@ -1,0 +1,3 @@
+- insert:
+    - id: ios-theme
+      name: '@local/dsh-ios-theme'

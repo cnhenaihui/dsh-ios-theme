@@ -1,0 +1,29 @@
+{
+  "name": "@local/dsh-ios-theme",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "description": "iOS 风格外观插件：浅色/深色/自动切换、强调色色板、夜间护眼、OpenCode 调色板与字体排版、对话重点样式、本地背景图（模糊/透明/轮换）",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-theme"
+      ]
+    }
+  }
+}
