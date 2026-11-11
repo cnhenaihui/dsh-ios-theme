@@ -13,7 +13,7 @@
  * theme.overrideTokens 叠加令牌层、localStorage 持久化、ctx.effect 清理。
  */
 window.__ModuleLoader__.load({
-  id: '@local/dsh-ios-theme',
+  id: '@cnhenaihui/dsh-ios-theme',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
@@ -1706,6 +1706,35 @@ html[data-ios-bg="on"] body { background-color: transparent; }
 html[data-ios-bg="on"][data-ios-bg-surface="on"] body {
   --dsw-alias-bg-base: color-mix(in srgb, var(--ios-bg-base-raw) var(--ios-bg-surface, 80%), transparent) !important;
   --dsw-specific-sidebar-fill: color-mix(in srgb, var(--ios-bg-side-raw) var(--ios-bg-surface, 80%), transparent) !important;
+}
+
+/* 层叠容器实底 ——「保留壁纸」与「不叠影」的分界线。
+   壁纸只该在「下层没有文字」的平面上透出：窗口底、侧栏、内容区空白。
+   一旦某个容器可能压在别的内容之上（右侧分栏、dockkit 面板、输入框），
+   它就必须回到不透明原色，否则下层文字会从半透明上层透出来 ——
+   工作区文件全屏时侧栏条目与正文叠印，就是这个原因。
+
+   做法是在这些容器的子树上把令牌重新指回原值，而不是硬写 background：
+   DSH 内部的 tabHost / composer 各自用 --dsw-alias-bg-base 铺底，
+   只要它们拿到的原值不透明，整块面板（含标签栏）就自然实底，
+   不必去猜哈希类名，也不会盖掉浮层原本的 bg-layer-2。 */
+html[data-ios-bg="on"][data-ios-bg-surface="on"] :is(
+  [data-dockkit-host],
+  [data-dockkit-pane],
+  [data-dockkit-float],
+  [data-sidebar-right-panel],
+  [data-composer-card],
+  [data-composer-dock],
+  [data-queue-dock]
+) {
+  --dsw-alias-bg-base: var(--ios-bg-base-raw);
+  --dsw-specific-sidebar-fill: var(--ios-bg-side-raw);
+}
+
+/* dockkit 的 pane 自身没有背景（靠祖先 tabHost 兜底），这里再补一层，
+   避免结构微调后又漏出透明底。 */
+html[data-ios-bg="on"][data-ios-bg-surface="on"] [data-dockkit-pane] {
+  background-color: var(--ios-bg-base-raw);
 }
 
 html[data-ios-bg="on"] body::before,

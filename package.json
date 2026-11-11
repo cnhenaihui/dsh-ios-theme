@@ -1,19 +1,48 @@
 {
-  "name": "@local/dsh-ios-theme",
+  "name": "@cnhenaihui/dsh-ios-theme",
   "version": "1.2.0",
-  "private": true,
   "type": "module",
-  "description": "iOS 风格外观插件：浅色/深色/自动切换、强调色色板、夜间护眼、OpenCode 调色板与字体排版、对话重点样式、本地背景图（模糊/透明/轮换）",
+  "description": "iOS-style appearance plugin: light, dark and auto themes, accent palettes, night eye-care filter, OpenCode palettes and typography, highlighted conversation styling, and local background images with blur, transparency and rotation. / iOS 风格外观插件：浅色/深色/自动切换、强调色色板、夜间护眼、OpenCode 调色板与字体排版、对话重点样式、本地背景图（模糊/透明/轮换）。",
+  "license": "MIT",
+  "author": "cnhenaihui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnhenaihui/dsh-ios-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cnhenaihui/dsh-ios-theme/issues"
+  },
+  "homepage": "https://github.com/cnhenaihui/dsh-ios-theme#readme",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "cordis",
+    "theme",
+    "ios",
+    "appearance",
+    "dark-mode"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
   },
   "files": [
     "index.js",
     "client.js",
-    "cordis.patch.yml"
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
   ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
