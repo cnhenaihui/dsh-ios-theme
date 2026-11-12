@@ -1,18 +1,18 @@
 {
-  "name": "@cnhenaihui/dsh-ios-theme",
-  "version": "1.2.0",
+  "name": "@cnhenaihui/dsh-theme-wallpaper",
+  "version": "2.1.0",
   "type": "module",
-  "description": "iOS-style appearance plugin: light, dark and auto themes, accent palettes, night eye-care filter, OpenCode palettes and typography, highlighted conversation styling, and local background images with blur, transparency and rotation. / iOS 风格外观插件：浅色/深色/自动切换、强调色色板、夜间护眼、OpenCode 调色板与字体排版、对话重点样式、本地背景图（模糊/透明/轮换）。",
+  "description": "Theme + wallpaper appearance plugin: 62 OpenCode-derived colour themes (37 built-in plus 25 IP presets, incl. the translucent Lucent Orange), each bringing its own Markdown and syntax-highlight colours, with a contrast-repair layer so every semantic colour stays legible, plus local background images. / 主题 + 壁纸外观插件：62 套源自 OpenCode 的配色主题（37 套内置 + 25 套 IP 预置，含透光橙），每套自带 Markdown 与语法高亮配色，并有一层对比度修复保证语义色可读，另有本地背景图。",
   "license": "MIT",
   "author": "cnhenaihui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cnhenaihui/dsh-ios-theme.git"
+    "url": "git+https://github.com/cnhenaihui/dsh-theme-wallpaper.git"
   },
   "bugs": {
-    "url": "https://github.com/cnhenaihui/dsh-ios-theme/issues"
+    "url": "https://github.com/cnhenaihui/dsh-theme-wallpaper/issues"
   },
-  "homepage": "https://github.com/cnhenaihui/dsh-ios-theme#readme",
+  "homepage": "https://github.com/cnhenaihui/dsh-theme-wallpaper#readme",
   "keywords": [
     "dsh",
     "dsh-plugin",
@@ -20,9 +20,15 @@
     "deepseek",
     "cordis",
     "theme",
-    "ios",
+    "themes",
+    "color-theme",
+    "wallpaper",
+    "background-image",
     "appearance",
-    "dark-mode"
+    "dark-mode",
+    "syntax-highlight",
+    "shiki",
+    "markdown"
   ],
   "publishConfig": {
     "access": "public"

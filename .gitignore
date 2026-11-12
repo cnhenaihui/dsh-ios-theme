@@ -8,6 +8,12 @@ node_modules/
 # 备份文件（client.js.bak 是失真的旧版本，不进版本历史）
 *.bak
 
+# 生成产物（每次 node docs/_render_page.mjs 都能重建，合计约 450KB）
+docs/_page-*.html
+
+# 上游抽取的临时中间文件（比对基准，不是落盘位置，见 docs/_extract_*.mjs 注释）
+docs/_*.snippet.js
+
 # 系统文件
 .DS_Store
 Thumbs.db
